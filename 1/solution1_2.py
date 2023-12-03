@@ -19,7 +19,6 @@ with open("input.txt") as input:
                     elif line[ind:ind+5] in numbers:
                         first = numbers[line[ind:ind+5]]
                     if first:
-                        print(f"FOUND {first=} in {line=}")
                         break;
                 except IndexError:
                     pass
@@ -37,14 +36,12 @@ with open("input.txt") as input:
                     elif line[ind-5:ind] in numbers:
                         last = numbers[line[ind-5:ind]]
                     if last:
-                        print(f"FOUND {last=} in {line=}")
                         break;
                 except IndexError:
                     pass
             
         if first is None and last is None:  # If there are no numbers in line
             first = last = 0
-        print(f"{first=}, {last=}")
         sum += first*10 + last
 print(sum)
  
