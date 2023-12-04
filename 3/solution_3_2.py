@@ -15,7 +15,8 @@ with open("input.txt") as input:
                 neighbors.extend(get_adjacent_indices(lineIdx, j, len(line), len(lines)))           
             for (row, col) in neighbors:
                 if lines[row][col] == "*":
-                    candidateGears[(row,col)].add((lineIdx, idxStart,idxEnd))
+                    # Store the coordinates of the number that is neighboring this candidate gear
+                    candidateGears[(row,col)].add((lineIdx, idxStart, idxEnd))
     for gear, numbersIdxs in candidateGears.items():
         if len(numbersIdxs) == 2:
             numbersIdxs = list(numbersIdxs)
